@@ -33,7 +33,9 @@ public class GameLayer extends CCColorLayer {
         this.context = context;
 
         winSize = CCDirector.sharedDirector().displaySize();
-        player = CCSprite.sprite("Player.png");
+        player = CCSprite.sprite("b1.png");
+        player.setScaleX(0.6f);
+        player.setScaleY(0.6f);
 
         player.setPosition(CGPoint.ccp(winSize.width / 2.0f, winSize.height / 2.0f));
 
@@ -50,7 +52,7 @@ public class GameLayer extends CCColorLayer {
         return scene;
     }
 
-    public boolean ccTouchesMoved(MotionEvent e)
+    public boolean ccTouchesBegan(MotionEvent e)
     {
         Log.d("touch_event",e.getX()+"");
         CGPoint player_coord = player.getPosition();
